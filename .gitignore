@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Environment / secrets
+.env
+ADMIN-LOGIN.md
+
+# Database (SQLite) — do not commit real data
+data/
+*.db
+*.db-shm
+*.db-wal
+
+# Uploaded images
+uploads/
+
+# Logs / OS
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Editor / tooling
+.claude/
+.vscode/
+.idea/
+
+# Personal / assignment documents (keep off the public repo)
+Claude outputs/

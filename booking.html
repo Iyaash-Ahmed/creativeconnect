@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Your Shoot — CreativeConnect</title>
+  <meta name="description" content="Pick a package, tell us your date, and get a free shoot plan and quote within 24 hours. No payment needed to request a booking.">
+
+  <!-- Canonical: https://<user>.github.io/creativeconnect/booking.html -->
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CreativeConnect">
+  <meta property="og:title" content="Book Your Shoot — CreativeConnect">
+  <meta property="og:description" content="Pick a package, tell us your date, and we'll send a free shoot plan and quote within 24 hours.">
+  <!-- REPLACE: assets/img/og-image.jpg (1200x630) -->
+  <meta property="og:image" content="https://picsum.photos/seed/og-image/1200/630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Book Your Shoot — CreativeConnect">
+  <meta name="twitter:description" content="Pick a package, tell us your date, and we'll send a free shoot plan and quote within 24 hours.">
+  <meta name="twitter:image" content="https://picsum.photos/seed/og-image/1200/630">
+
+  <link rel="icon" href="assets/img/logo.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/enhance.css">
+  <script src="assets/js/effects.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html"><img class="brand__mark" src="assets/img/logo.svg" alt="" width="30" height="30" aria-hidden="true">Creative<b>Connect</b></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html#packages">Packages</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#how">How it works</a></li>
+          <li class="nav-cta"><a class="btn btn-primary" href="booking.html" data-cta="header">Book a shoot</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Booking</p>
+          <h1>Book your shoot</h1>
+          <p class="muted">Pick a package, tell us your date, and we'll send a free shoot plan and quote within 24 hours.</p>
+        </div>
+
+        <form id="booking-form" novalidate>
+          <!-- Anti-spam honeypot: hidden from people, tempting to bots. Leave empty. -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="cc-website">Website</label>
+            <input type="text" id="cc-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <!-- Step 1: package selector (radio-group) -->
+          <h2 class="h3" id="step1-label">1. Choose a package</h2>
+          <div class="pkg-options" id="package-selector" role="radiogroup" aria-labelledby="step1-label">
+            <!-- rendered from config.js by booking.js -->
+          </div>
+
+          <div class="booking-layout">
+            <!-- Step 2: the form -->
+            <div class="form-card">
+              <h2 class="h3">2. Your details</h2>
+
+              <p class="form-status" id="form-status" role="status" aria-live="assertive"></p>
+
+              <div class="field">
+                <label for="field-name">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="field-name" name="firstname" autocomplete="name" required
+                       aria-required="true" aria-describedby="error-firstname">
+                <span class="field-error" id="error-firstname" aria-live="polite"></span>
+              </div>
+
+              <div class="field">
+                <label for="field-email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="field-email" name="email" autocomplete="email" required
+                       aria-required="true" aria-describedby="error-email">
+                <span class="field-error" id="error-email" aria-live="polite"></span>
+              </div>
+
+              <div class="field">
+                <label for="field-phone">Phone / WhatsApp <span class="hint">(optional)</span></label>
+                <input type="tel" id="field-phone" name="phone" autocomplete="tel">
+              </div>
+
+              <div class="field">
+                <label for="field-shoot-type">Shoot type <span class="req" aria-hidden="true">*</span></label>
+                <select id="field-shoot-type" name="shoot_type" required aria-required="true" aria-describedby="error-shoot_type">
+                  <option value="">Please choose…</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Event">Event</option>
+                  <option value="Brand / Product">Brand / Product</option>
+                  <option value="Portrait / Graduation">Portrait / Graduation</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="field-error" id="error-shoot_type" aria-live="polite"></span>
+              </div>
+
+              <div class="field">
+                <label for="field-date">Preferred date <span class="req" aria-hidden="true">*</span></label>
+                <input type="date" id="field-date" name="preferred_date" required aria-required="true"
+                       aria-describedby="error-preferred_date">
+                <span class="field-error" id="error-preferred_date" aria-live="polite"></span>
+              </div>
+
+              <div class="field field-consent">
+                <input type="checkbox" id="field-consent" name="consent" required aria-required="true"
+                       aria-describedby="error-consent">
+                <label for="field-consent">
+                  I agree to CreativeConnect storing my details to reply to this request.
+                  <a href="privacy.html">See our privacy note</a>. <span class="req" aria-hidden="true">*</span>
+                </label>
+              </div>
+              <span class="field-error" id="error-consent" aria-live="polite"></span>
+
+              <!-- Hidden: package (filled from step 1) -->
+              <input type="hidden" id="field-package" name="package_name" value="">
+
+              <button type="submit" class="btn btn-primary btn-block" id="submit-btn" aria-busy="false">
+                Send booking request
+              </button>
+            </div>
+
+            <!-- What happens next -->
+            <aside class="next-box" data-reveal>
+              <h3>What happens next</h3>
+              <ul>
+                <li>We reply within 24 hours.</li>
+                <li>You get a free shoot plan tailored to your day.</li>
+                <li>We hold your date for 48 hours.</li>
+                <li>No payment needed now.</li>
+              </ul>
+            </aside>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="index.html"><img class="brand__mark" src="assets/img/logo.svg" alt="" width="30" height="30" aria-hidden="true">Creative<b>Connect</b></a>
+          <p class="site-footer__about">Photo and video production across the Maldives.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html#packages">Packages</a></li>
+            <li><a href="booking.html">Book a shoot</a></li>
+            <li><a href="privacy.html">Privacy &amp; cookies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a data-ig-link href="#" target="_blank" rel="noopener" data-social="instagram" data-location="footer">Instagram</a></li>
+            <li><a data-wa-link href="#" target="_blank" rel="noopener" data-social="whatsapp" data-location="footer">WhatsApp</a></li>
+            <li><a data-email-link href="#"><span data-email>hello@creativeconnect.demo</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>© 2026 CreativeConnect. Demo project for academic purposes.</span>
+        <a href="#" data-cookie-settings>Cookie settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/analytics.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/booking.js"></script>
+</body>
+</html>

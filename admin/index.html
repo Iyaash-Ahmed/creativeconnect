@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin — CreativeConnect</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230E0F12'/><text x='32' y='45' font-family='Georgia,serif' font-size='34' font-weight='700' text-anchor='middle' fill='%23E8A33D'>CC</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- ============ LOGIN ============ -->
+  <div id="login-view" class="login-wrap hidden">
+    <form class="login-card" id="login-form">
+      <h1 class="brand-mark">Creative<b>Connect</b> Admin</h1>
+      <p class="muted" style="margin-top:-4px">Sign in to manage your site.</p>
+      <div class="field">
+        <label for="login-username">Username</label>
+        <input type="text" id="login-username" autocomplete="username" required autofocus>
+      </div>
+      <div class="field">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" autocomplete="current-password" required>
+      </div>
+      <p class="form-error" id="login-error"></p>
+      <button class="btn btn-primary btn-block" type="submit" style="width:100%; justify-content:center;">Sign in</button>
+    </form>
+  </div>
+
+  <!-- ============ APP ============ -->
+  <div id="app-view" class="hidden">
+    <div class="topbar">
+      <span class="brand">Creative<b>Connect</b> · Admin</span>
+      <div class="topbar-actions">
+        <span class="who" id="who"></span>
+        <a class="btn btn-sm" href="/" target="_blank" rel="noopener">View site ↗</a>
+        <button class="btn btn-sm" id="logout-btn">Log out</button>
+      </div>
+    </div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar">
+        <a href="#dashboard" data-view="dashboard">Dashboard</a>
+        <a href="#leads" data-view="leads">Leads <span class="badge badge-count" id="nav-leads-count" hidden>0</span></a>
+        <a href="#analytics" data-view="analytics">Analytics</a>
+        <a href="#home" data-view="home">Home content</a>
+        <a href="#packages" data-view="packages">Packages</a>
+        <a href="#portfolio" data-view="portfolio">Portfolio</a>
+        <a href="#settings" data-view="settings">Settings</a>
+        <a href="#users" data-view="users" id="nav-users" hidden>Users</a>
+        <a href="#account" data-view="account">Account</a>
+      </nav>
+      <main class="content" id="panel"><!-- rendered by admin.js --></main>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
