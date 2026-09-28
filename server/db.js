@@ -101,9 +101,9 @@ const DEFAULT_SETTINGS = {
     "Island-wide travel"
   ]),
   footer_about: "Photo and video production across the Maldives. We help couples and brands turn moments into work they're proud to share.",
-  instagram_handle: "creativeconnect.mv",
-  whatsapp: "9607000000",
-  email: "hello@creativeconnect.demo",
+  instagram_handle: "mvcreativeconnect",
+  whatsapp: "9607428224",
+  email: "mvcreativeconnect@gmail.com",
   ga4_measurement_id: "G-XXXXXXXXXX",
   hubspot_portal_id: "",
   hubspot_form_id: "",

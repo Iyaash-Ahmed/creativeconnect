@@ -93,7 +93,7 @@
       hero_title: "Your story, shot like art.", hero_subtitle: "Weddings, events and brand films across the islands.",
       trust_items: ["Reply within 24 hours", "Photo + video in one team", "Island-wide travel"],
       footer_about: "Photo and video production across the Maldives.",
-      instagram_handle: "creativeconnect.mv", whatsapp: "9607000000", email: "hello@creativeconnect.demo",
+      instagram_handle: "mvcreativeconnect", whatsapp: "9607428224", email: "mvcreativeconnect@gmail.com",
       ga4_measurement_id: "G-XXXXXXXXXX", hubspot_portal_id: "", hubspot_form_id: "",
       smtp_host: "", smtp_port: "587", smtp_secure: "false", smtp_user: "", mail_from: "", mail_to: "", smtp_pass_set: false
     }

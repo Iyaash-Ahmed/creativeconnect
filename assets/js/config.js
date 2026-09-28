@@ -10,9 +10,9 @@ window.CC_CONFIG = {
   ga4MeasurementId: "G-XXXXXXXXXX",
   hubspot: { portalId: "", formId: "" },
 
-  instagramHandle: "creativeconnect.mv",
-  whatsapp: "9607000000",
-  email: "hello@creativeconnect.demo",
+  instagramHandle: "mvcreativeconnect",
+  whatsapp: "9607428224",
+  email: "mvcreativeconnect@gmail.com",
 
   hero: {
     eyebrow: "Book your shoot in 60 seconds",
