@@ -38,6 +38,18 @@ fs.cpSync(path.join(ROOT, "assets"), path.join(OUT, "assets"), { recursive: true
 });
 log("assets + pages copied");
 
+// 3b. Admin dashboard as a NON-FUNCTIONAL demo (no backend on Pages).
+//     Inject window.CC_ADMIN_DEMO=true so admin.js serves mock data + a banner.
+fs.cpSync(path.join(ROOT, "admin"), path.join(OUT, "admin"), { recursive: true });
+const adminIndex = path.join(OUT, "admin", "index.html");
+let adminHtml = fs.readFileSync(adminIndex, "utf8");
+adminHtml = adminHtml.replace(
+  '<script src="admin.js"></script>',
+  '<script>window.CC_ADMIN_DEMO = true;</script>\n  <script src="admin.js"></script>'
+);
+fs.writeFileSync(adminIndex, adminHtml);
+log("admin demo copied (CC_ADMIN_DEMO injected)");
+
 // 4. Overwrite config.js with a static build (staticMode:true bakes in content)
 const cfg = Object.assign({}, getPublicConfig(), { staticMode: true });
 const configJs =
