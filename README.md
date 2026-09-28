@@ -11,12 +11,16 @@ the admin — no code changes needed.
 
 Originally a static site (v1); v2 adds the server, database and admin.
 
-**🔗 Live demo:** _deploying…_ &nbsp;·&nbsp; **Admin:** `/admin`
-<!-- Once deployed on Render, replace the line above with your live URL, e.g.:
-     **🔗 Live demo:** https://creativeconnect.onrender.com  ·  **Admin:** /admin -->
+**🔗 Live demo (static, GitHub Pages):** https://iyaash-ahmed.github.io/creativeconnect/
 
-> Built with the one-click **Deploy to Render** button above, or see
-> [section 5 — Deploy it live](#5-deploy-it-live-render--railway-free-tier).
+> The GitHub Pages demo is the **public marketing site only** — booking uses a
+> WhatsApp/email fallback, and there is **no admin dashboard or database** (Pages
+> can't run a server). For the **full app** (admin at `/admin`, saved bookings,
+> analytics), deploy the Node server with the **Deploy to Render** button above,
+> or see [section 5 — Deploy it live](#5-deploy-it-live-render--railway-free-tier).
+>
+> Rebuild the static site after content changes with: `npm run build:static`
+> (outputs to `docs/`, which GitHub Pages serves from `main` → `/docs`).
 
 ---
 
