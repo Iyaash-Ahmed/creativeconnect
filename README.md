@@ -1,5 +1,7 @@
 # CreativeConnect — booking site + admin dashboard
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Iyaash-Ahmed/creativeconnect)
+
 A photo & video booking website for **CreativeConnect** (a demo Maldives
 production business) with a self-contained **Node.js + Express + SQLite**
 backend and a password-protected **admin dashboard**. Visitors send booking
@@ -8,6 +10,13 @@ inbox**. The homepage content, packages and portfolio are all editable from
 the admin — no code changes needed.
 
 Originally a static site (v1); v2 adds the server, database and admin.
+
+**🔗 Live demo:** _deploying…_ &nbsp;·&nbsp; **Admin:** `/admin`
+<!-- Once deployed on Render, replace the line above with your live URL, e.g.:
+     **🔗 Live demo:** https://creativeconnect.onrender.com  ·  **Admin:** /admin -->
+
+> Built with the one-click **Deploy to Render** button above, or see
+> [section 5 — Deploy it live](#5-deploy-it-live-render--railway-free-tier).
 
 ---
 
