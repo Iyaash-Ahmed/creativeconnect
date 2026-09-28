@@ -1,0 +1,34 @@
+# Render Blueprint — deploys CreativeConnect as a full Node web service.
+# On render.com: New → Blueprint → connect this repo → Apply.
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: creativeconnect
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Signs admin login sessions. Render generates a strong random value.
+      - key: JWT_SECRET
+        generateValue: true
+      # First admin account, created on first boot.
+      - key: ADMIN_USERNAME
+        value: admin
+      # Set this yourself in the Render dashboard (Environment tab) — keep it secret.
+      - key: ADMIN_PASSWORD
+        sync: false
+    # NOTE: The free plan has an EPHEMERAL filesystem — the SQLite database and
+    # uploaded images reset whenever the service restarts or redeploys (default
+    # content re-seeds automatically). To keep data permanently, upgrade to a
+    # paid instance and attach a Disk mounted at /data, then add:
+    #   - key: DB_PATH
+    #     value: /data/creativeconnect.db
+    # disk:
+    #   name: cc-data
+    #   mountPath: /data
+    #   sizeGB: 1
