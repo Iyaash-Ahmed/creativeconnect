@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://iyaash-ahmed.github.io/creativeconnect/sitemap.xml

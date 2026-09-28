@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request Received — CreativeConnect</title>
+  <meta name="description" content="Thanks for your booking request. We'll reply within 24 hours with a free shoot plan and quote.">
+  <meta name="robots" content="noindex">
+
+  <!-- Canonical: https://<user>.github.io/creativeconnect/thanks.html -->
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CreativeConnect">
+  <meta property="og:title" content="Request Received — CreativeConnect">
+  <meta property="og:description" content="Thanks — we'll reply within 24 hours.">
+  <!-- REPLACE: assets/img/og-image.jpg (1200x630) -->
+  <meta property="og:image" content="https://picsum.photos/seed/og-image/1200/630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://picsum.photos/seed/og-image/1200/630">
+
+  <link rel="icon" href="assets/img/logo.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/enhance.css">
+  <script src="assets/js/effects.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html"><img class="brand__mark" src="assets/img/logo.svg" alt="" width="30" height="30" aria-hidden="true">Creative<b>Connect</b></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html#packages">Packages</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#how">How it works</a></li>
+          <li class="nav-cta"><a class="btn btn-primary" href="booking.html" data-cta="header">Book a shoot</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section page-hero">
+      <div class="container">
+        <div class="confirm-card" data-reveal>
+          <div class="confirm-check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <h1>Request received!</h1>
+          <p class="muted">We'll reply within 24 hours with a free shoot plan and quote.</p>
+          <p id="thanks-package-line" hidden>Your chosen package: <span class="pill" id="thanks-package"></span></p>
+          <div class="confirm-actions">
+            <a class="btn btn-primary" data-ig-link href="#" target="_blank" rel="noopener"
+               data-social="instagram" data-location="thanks">Follow us on Instagram</a>
+            <a class="btn btn-ghost" href="index.html">Back to home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__bottom" style="border:0; margin:0; padding:0;">
+        <span>© 2026 CreativeConnect. Demo project for academic purposes.</span>
+        <a href="#" data-cookie-settings>Cookie settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/analytics.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Show the chosen package from ?package=<id>
+    (function () {
+      var id = new URLSearchParams(location.search).get("package");
+      var packages = (window.CC_CONFIG && window.CC_CONFIG.packages) || [];
+      var pkg = packages.filter(function (p) { return p.id === id; })[0];
+      if (pkg) {
+        document.getElementById("thanks-package").textContent = pkg.name;
+        document.getElementById("thanks-package-line").hidden = false;
+      }
+    })();
+  </script>
+</body>
+</html>
